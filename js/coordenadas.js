@@ -21,7 +21,7 @@ casas.forEach(casa => {
 function coordenadas(event){
 
     addOcupada()
-
+    
     let pecaClicada = event.target
     console.log(pecaClicada)
     // Pega a casa em que a peça clicada está e o seu id

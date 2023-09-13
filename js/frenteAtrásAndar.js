@@ -1,3 +1,5 @@
+
+
 function frenteAtrásAndar(vertical, horizontal, pecaClicada){
     
 
