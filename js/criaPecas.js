@@ -3,6 +3,15 @@ criaPecas()
 function criaPecas(){
     const eventoCoordenadas = function(){coordenadas(event)};
 
+// DAMA
+const d1 = document.querySelector('#d1')
+const damaD1 = document.createElement('div')
+damaD1.setAttribute('class', 'dama')
+d1.appendChild(damaD1)
+damaD1.innerHTML = 'dama'
+damaD1.addEventListener('click', eventoCoordenadas)
+
+
     // TORRES
 // cria a torre que fica inicialmente na casa h1
 const h1 = document.querySelector('#h1')

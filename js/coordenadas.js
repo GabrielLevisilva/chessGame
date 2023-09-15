@@ -45,8 +45,10 @@ function coordenadas(event){
       console.log("A peça é um BISPO")
       diagonais(vertical, horizontal, pecaClicada)
   }
-    else if(pecaClicada.classList.contains('rei')){
-        console.log("A peça é um REI")
+    else if(pecaClicada.classList.contains('dama')){
+        console.log("A peça é uma DAMA")
+        diagonais(vertical, horizontal, pecaClicada)
+        frenteAtrásAndar(vertical, horizontal, pecaClicada)
         
     }
     // TODO CRIAR OUTROS ELSE IF
