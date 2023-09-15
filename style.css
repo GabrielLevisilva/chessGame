@@ -47,6 +47,16 @@
     cursor: pointer;
     background-color: white;
 }
+.chessboard  div .bispo{
+    border-radius: 50%;
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    background-color: white;
+}
 .ocupada{
     background-color: rgba(95, 158, 160, 0.459);
 }

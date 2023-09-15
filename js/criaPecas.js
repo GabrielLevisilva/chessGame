@@ -2,6 +2,7 @@ criaPecas()
 
 function criaPecas(){
     const eventoCoordenadas = function(){coordenadas(event)};
+
     // TORRES
 // cria a torre que fica inicialmente na casa h1
 const h1 = document.querySelector('#h1')
@@ -20,4 +21,21 @@ a1.appendChild(torreA1)
 torreA1.innerHTML = 'torre'
 torreA1.addEventListener('click', eventoCoordenadas)
 
+// BISPOS
+const f1 = document.querySelector('#f1')
+const bispoF1 = document.createElement('div')
+bispoF1.setAttribute('class', 'bispo')
+f1.appendChild(bispoF1)
+bispoF1.innerHTML = 'bispo'
+bispoF1.addEventListener('click', eventoCoordenadas)
+
+
+const c1 = document.querySelector('#c1')
+const bispoC1 = document.createElement('div')
+bispoC1.setAttribute('class', 'bispo')
+c1.appendChild(bispoC1)
+bispoC1.innerHTML = 'bispo'
+bispoC1.addEventListener('click', eventoCoordenadas)
+
 }
+

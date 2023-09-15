@@ -41,6 +41,10 @@ function coordenadas(event){
         console.log("A peça é uma torre")
         frenteAtrásAndar(vertical, horizontal, pecaClicada)
     }
+    if(pecaClicada.classList.contains('bispo')){
+      console.log("A peça é um BISPO")
+      diagonais(vertical, horizontal, pecaClicada)
+  }
     else if(pecaClicada.classList.contains('rei')){
         console.log("A peça é um REI")
         
