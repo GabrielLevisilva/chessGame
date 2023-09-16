@@ -1,22 +1,14 @@
 
 
 function frenteAtrásAndar(vertical, horizontal, pecaClicada){
-    
-
-    console.log('você está em frente atrás andar')
-    console.log(vertical)
-    console.log(horizontal)
-    console.log(pecaClicada)
 
     const entrarCasaEvento = function(){ entrarCasa(event, pecaClicada, entrarCasaEvento)}
 
     let casasOcupadas =  document.querySelectorAll(".ocupada")
-   
-
     // MOVER PARA FRENTE
     
     let andarFrente = 8 - horizontal; //quantidade de casa livre para andar na frente
-let encerrarLoop = false;
+    let encerrarLoop = false;
 
 for (let c = 1; c <= andarFrente; c++) {
   let id = vertical + (horizontal + c);
@@ -35,17 +27,7 @@ for (let c = 1; c <= andarFrente; c++) {
   if (encerrarLoop) {
     break; // Encerra o loop c se a condição for verdadeira
   }
-
-
-
-            // if(casaAndar){
-                
-            //     casaAndar.style.backgroundColor = 'blue'
-            //     casaAndar.addEventListener('click', entrarCasaEvento)
-            // }
-            // else{
-            //     console.log('essa casa não existe')
-            // }
+  
     }
 
     // MOVER PARA TRÁS
@@ -70,18 +52,6 @@ for (let c = 1; c <= andarFrente; c++) {
                     break;
                 }
             }
-
-
-                // if(casaAndar){
-                    
-                //     casaAndar.style.backgroundColor = 'blue'
-                //     casaAndar.addEventListener('click', entrarCasaEvento)
-                // }
-                // else{
-                //     console.log('essa casa não existe')
-                // }
-
-            
     }
 
     // MOVER PARA ESQUERDA
@@ -104,23 +74,6 @@ for (let c = 1; c <= andarFrente; c++) {
             console.log('essa casa não existe')
         }
 
-
-        // for(let rep = 0; rep < casasOcupadas.length; rep++){
-        //     if(casaAndar == casasOcupadas[rep]){
-        //         break;
-        //     }
-        //     else{
-        //         if(casaAndar){
-                    
-        //             casaAndar.style.backgroundColor = 'blue'
-        //             casaAndar.addEventListener('click', entrarCasaEvento)
-        //         }
-        //         else{
-        //             console.log('essa casa não existe')
-        //         }
-
-        //     }
-        // }
             
     }
 
