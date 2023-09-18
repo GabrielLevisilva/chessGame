@@ -103,20 +103,38 @@ for (let c = 1; c <= andarFrente; c++) {
     }
 
     // MOVER PARA A DIREITA
+    encerrarLoop = false
     console.log('letraLocal = ' + letraLocal)
 
     for(let f = 1; f < letters.length; f++){
         
         id = letters[letraLocal + f] + horizontal
+        let casaOcupada = false
+
         casaAndar = document.getElementById(id)
-            if(casaAndar){
-                    
-                casaAndar.style.backgroundColor = 'blue'
-                casaAndar.addEventListener('click', entrarCasaEvento)
-            }
-            else{
-                console.log('essa casa não existe')
-            }
+        if(casaAndar){
+            for(let w = 0; w < casasOcupadas.length; w++){
+               if(casaAndar == casasOcupadas[w]){
+                   encerrarLoop = true
+                   casaOcupada = true
+                   break;
+               }
+           }
+
+           if(!casaOcupada){
+               casaAndar.style.backgroundColor = 'blue';
+               casaAndar.addEventListener('click', entrarCasaEvento);
+           }
+
+
+           if(encerrarLoop){
+               break;
+           }
+            
+       }
+       else{
+
+       }
     }
 
 }
