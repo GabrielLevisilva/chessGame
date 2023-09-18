@@ -33,25 +33,34 @@ for (let c = 1; c <= andarFrente; c++) {
     // MOVER PARA TRÁS
     encerrarLoop = false
 
-    for(let d = (horizontal - 1); d > 0; d--){
+    for(let d = horizontal; d > 0; d--){
         
-        id = vertical + (horizontal - d)
-        casaAndar = document.getElementById(id)
-        
+        id = vertical + (d - 1)
+        let casaAndar = document.getElementById(id)
+        let casaOcupada = false
+
+        if(casaAndar){
             for(let w = 0; w < casasOcupadas.length; w++){
                 if(casaAndar == casasOcupadas[w]){
                     encerrarLoop = true
-                    break;
-                }
-                else{
-                    casaAndar.style.backgroundColor = 'blue';
-                    casaAndar.addEventListener('click', entrarCasaEvento);
-                }
-
-                if(encerrarLoop){
+                    casaOcupada = true
                     break;
                 }
             }
+
+            if(!casaOcupada){
+                casaAndar.style.backgroundColor = 'blue';
+                casaAndar.addEventListener('click', entrarCasaEvento);
+            }
+
+
+            if(encerrarLoop){
+                break;
+            }
+        }
+        else{
+
+        }
     }
 
     // MOVER PARA ESQUERDA
@@ -59,22 +68,38 @@ for (let c = 1; c <= andarFrente; c++) {
     // true = não adiciona evento nem cor
     
     let letraLocal = letters.indexOf(vertical)
+    encerrarLoop = false
 
     for(let e = 1; e < letters.length; e++ ){
         
         id = letters[letraLocal - e] + horizontal
         casaAndar = document.getElementById(id)
+        let casaOcupada = false
 
         if(casaAndar){
-                    
-            casaAndar.style.backgroundColor = 'blue'
-            casaAndar.addEventListener('click', entrarCasaEvento)
+             for(let w = 0; w < casasOcupadas.length; w++){
+                if(casaAndar == casasOcupadas[w]){
+                    encerrarLoop = true
+                    casaOcupada = true
+                    break;
+                }
+            }
+
+            if(!casaOcupada){
+                casaAndar.style.backgroundColor = 'blue';
+                casaAndar.addEventListener('click', entrarCasaEvento);
+            }
+
+
+            if(encerrarLoop){
+                break;
+            }
+             
         }
         else{
-            console.log('essa casa não existe')
+
         }
 
-            
     }
 
     // MOVER PARA A DIREITA
@@ -98,8 +123,8 @@ for (let c = 1; c <= andarFrente; c++) {
 
 
 function entrarCasa(event, pecaClicada, entrarCasaEvento){
-    const todasCasas = document.querySelectorAll('.casa') //cuidado para não tirar a class white e black
-
+    const todasCasas = document.querySelectorAll('.casa') 
+    
     let casaEscolhida = event.target
 
     casaEscolhida.appendChild(pecaClicada)
