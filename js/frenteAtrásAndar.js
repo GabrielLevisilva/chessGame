@@ -104,7 +104,7 @@ for (let c = 1; c <= andarFrente; c++) {
 
     // MOVER PARA A DIREITA
     encerrarLoop = false
-    console.log('letraLocal = ' + letraLocal)
+
 
     for(let f = 1; f < letters.length; f++){
         
